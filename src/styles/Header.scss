@@ -1,0 +1,28 @@
+$header-color: #ffd800;
+$header-bg-color: #000000;
+
+.header {
+  background-color: $header-bg-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  color: $header-color;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+  }
+}
