@@ -1,0 +1,52 @@
+.tools-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__category {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__availability {
+    font-size: 0.9rem;
+    color: green;
+    font-weight: bold;
+  }
+
+  &__unavailability {
+    font-size: 0.9rem;
+    color: red;
+    font-weight: bold;
+  }
+}

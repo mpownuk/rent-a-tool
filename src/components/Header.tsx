@@ -23,8 +23,10 @@ const Header: React.FC<HeaderProps> = ({ appName }) => {
             <li>
               <Link to="contact">Contact Us</Link>
             </li>
+            <li>
+              <Link to="login">Log In</Link>
+            </li>
           </ul>
-          <button className="header__btn">Login/Register</button>
         </nav>
       </header>
       <Outlet />
