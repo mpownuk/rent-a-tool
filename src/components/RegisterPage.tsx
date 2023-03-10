@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { onRegisterSucces } from "../methods/onRegisterSucces";
 
 interface RegisterProps {
   onRegisterSuccess: () => void;
 }
 
-const RegisterPage: React.FC<RegisterProps> = ({ onRegisterSuccess }) => {
+const RegisterPage: React.FC<RegisterProps> = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    fetch("./data/users.json")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -22,7 +31,7 @@ const RegisterPage: React.FC<RegisterProps> = ({ onRegisterSuccess }) => {
     if (email === "user@example.com") {
       setError("User already exists");
     } else {
-      onRegisterSuccess();
+      onRegisterSucces(firstName, lastName, email, password);
     }
   };
 
@@ -31,6 +40,28 @@ const RegisterPage: React.FC<RegisterProps> = ({ onRegisterSuccess }) => {
       <form className="form__form" onSubmit={handleSubmit}>
         <h2 className="form__title">Register</h2>
         <div className="form__field">
+          <label htmlFor="firstName" className="form__label">
+            First Name
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            className="form__input"
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
+            required
+          />{" "}
+          <label htmlFor="lastName" className="form__label">
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            className="form__input"
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            required
+          />{" "}
           <label htmlFor="email" className="form__label">
             Email
           </label>

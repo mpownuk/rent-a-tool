@@ -1,0 +1,124 @@
+{
+  "tools": [
+    {
+      "id": 1,
+      "name": "Hammer",
+      "description": "A tool used for pounding nails",
+      "category": "Hand Tools",
+      "price": 5.0,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name": "Drill",
+      "description": "A tool used for drilling holes",
+      "category": "Power Tools",
+      "price": 10.0,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "Saw",
+      "description": "A tool used for cutting wood",
+      "category": "Power Tools",
+      "price": 15.0,
+      "available": false
+    },
+    {
+      "id": 4,
+      "name": "Screwdriver",
+      "description": "A tool used for tightening and loosening screws",
+      "category": "Hand Tools",
+      "price": 2.0,
+      "available": true
+    },
+    {
+      "id": 5,
+      "name": "Wrench",
+      "description": "A tool used for tightening and loosening bolts",
+      "category": "Hand Tools",
+      "price": 3.0,
+      "available": true
+    },
+    {
+      "id": 6,
+      "name": "Pliers",
+      "description": "A tool used for gripping and bending wires and other materials",
+      "category": "Hand Tools",
+      "price": 4.0,
+      "available": false
+    },
+    {
+      "id": 7,
+      "name": "Circular Saw",
+      "description": "A power saw that uses a toothed blade to cut through wood",
+      "category": "Power Tools",
+      "price": 25.0,
+      "available": true
+    },
+    {
+      "id": 8,
+      "name": "Jigsaw",
+      "description": "A power saw that uses a reciprocating blade to cut through wood",
+      "category": "Power Tools",
+      "price": 20.0,
+      "available": false
+    },
+    {
+      "id": 9,
+      "name": "Angle Grinder",
+      "description": "A power tool used for cutting and grinding metal",
+      "category": "Power Tools",
+      "price": 30.0,
+      "available": true
+    },
+    {
+      "id": 10,
+      "name": "Chainsaw",
+      "description": "A portable mechanical saw used for cutting down trees",
+      "category": "Power Tools",
+      "price": 50.0,
+      "available": true
+    },
+    {
+      "id": 11,
+      "name": "Jackhammer",
+      "description": "A pneumatic tool used for breaking up concrete",
+      "category": "Power Tools",
+      "price": 100.0,
+      "available": false
+    },
+    {
+      "id": 12,
+      "name": "Paint Sprayer",
+      "description": "A tool used for spraying paint onto surfaces",
+      "category": "Painting Tools",
+      "price": 15.0,
+      "available": true
+    },
+    {
+      "id": 13,
+      "name": "Staple Gun",
+      "description": "A hand-held tool used for stapling materials together",
+      "category": "Hand Tools",
+      "price": 5.0,
+      "available": false
+    },
+    {
+      "id": 14,
+      "name": "Power Drill",
+      "description": "A tool used for drilling holes and driving screws",
+      "category": "Power Tools",
+      "price": 25.0,
+      "available": true
+    },
+    {
+      "id": 15,
+      "name": "Ratchet",
+      "description": "A hand-held tool used for tightening and loosening bolts and nuts",
+      "category": "Hand Tools",
+      "price": 3.0,
+      "available": true
+    }
+  ]
+}
