@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import APIClient from "../classes/APIClient";
+
+const ApiClient = new APIClient("data/users.json");
 
 interface LoginProps {
   onLoginSuccess: () => void;
@@ -8,16 +11,12 @@ interface LoginProps {
 const LoginPage: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Your login authentication logic here
-    if (email === "user@example.com" && password === "password123") {
-      onLoginSuccess();
-    } else {
-      setError("Invalid email or password");
-    }
+    const res = await ApiClient.loginUser(email, password);
+    setError((prev) => (res ? "Success!" : "Invalid email or password!"));
   };
 
   return (
