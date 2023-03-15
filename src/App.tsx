@@ -3,12 +3,13 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import Header from "./components/Header";
 import Tools from "./components/Tools";
+import UserDashboard from "./components/UserDashboard";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header appName={"rent a tool"} />}>
+        <Route path="/" element={<Header appName={"Rent a Tool"} />}>
           <Route path="tools" element={<Tools />} />
           <Route
             path="login"
@@ -30,6 +31,7 @@ function App() {
               />
             }
           />
+          <Route path="user" element={<UserDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

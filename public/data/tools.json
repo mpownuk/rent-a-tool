@@ -6,6 +6,7 @@
       "description": "A tool used for pounding nails",
       "category": "Hand Tools",
       "price": 5.0,
+      "image": "./images/Hammer.jpg",
       "available": true
     },
     {
@@ -14,6 +15,7 @@
       "description": "A tool used for drilling holes",
       "category": "Power Tools",
       "price": 10.0,
+      "image": "./images/Drill.jpg",
       "available": true
     },
     {
@@ -22,6 +24,7 @@
       "description": "A tool used for cutting wood",
       "category": "Power Tools",
       "price": 15.0,
+      "image": "./images/Saw.jpg",
       "available": false
     },
     {
@@ -30,6 +33,7 @@
       "description": "A tool used for tightening and loosening screws",
       "category": "Hand Tools",
       "price": 2.0,
+      "image": "./images/Screwdriver.jpg",
       "available": true
     },
     {
@@ -38,6 +42,7 @@
       "description": "A tool used for tightening and loosening bolts",
       "category": "Hand Tools",
       "price": 3.0,
+      "image": "./images/Wrench.jpg",
       "available": true
     },
     {
@@ -46,6 +51,7 @@
       "description": "A tool used for gripping and bending wires and other materials",
       "category": "Hand Tools",
       "price": 4.0,
+      "image": "./images/Pliers.jpg",
       "available": false
     },
     {
@@ -54,6 +60,7 @@
       "description": "A power saw that uses a toothed blade to cut through wood",
       "category": "Power Tools",
       "price": 25.0,
+      "image": "./images/Circular-Saw.jpg",
       "available": true
     },
     {
@@ -62,6 +69,7 @@
       "description": "A power saw that uses a reciprocating blade to cut through wood",
       "category": "Power Tools",
       "price": 20.0,
+      "image": "./images/Jigsaw.jpg",
       "available": false
     },
     {
@@ -70,6 +78,7 @@
       "description": "A power tool used for cutting and grinding metal",
       "category": "Power Tools",
       "price": 30.0,
+      "image": "./images/Angle-Grinder.jpg",
       "available": true
     },
     {
@@ -78,6 +87,7 @@
       "description": "A portable mechanical saw used for cutting down trees",
       "category": "Power Tools",
       "price": 50.0,
+      "image": "./images/Chainsaw.jpg",
       "available": true
     },
     {
@@ -86,6 +96,7 @@
       "description": "A pneumatic tool used for breaking up concrete",
       "category": "Power Tools",
       "price": 100.0,
+      "image": "./images/Jackhammer.jpg",
       "available": false
     },
     {
@@ -94,6 +105,7 @@
       "description": "A tool used for spraying paint onto surfaces",
       "category": "Painting Tools",
       "price": 15.0,
+      "image": "./images/Paint-Sprayer.jpg",
       "available": true
     },
     {
@@ -102,6 +114,7 @@
       "description": "A hand-held tool used for stapling materials together",
       "category": "Hand Tools",
       "price": 5.0,
+      "image": "./images/Staple-Gun.jpg",
       "available": false
     },
     {
@@ -110,6 +123,7 @@
       "description": "A tool used for drilling holes and driving screws",
       "category": "Power Tools",
       "price": 25.0,
+      "image": "./images/Power-Drill.jpg",
       "available": true
     },
     {
@@ -118,6 +132,7 @@
       "description": "A hand-held tool used for tightening and loosening bolts and nuts",
       "category": "Hand Tools",
       "price": 3.0,
+      "image": "./images/Ratchet.jpg",
       "available": true
     }
   ]
