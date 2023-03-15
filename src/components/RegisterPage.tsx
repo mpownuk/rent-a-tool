@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { onRegisterSucces } from "../methods/onRegisterSucces";
+import APIClient from "../classes/APIClient";
 
 interface RegisterProps {
   onRegisterSuccess: () => void;
 }
+
+const ApiClient = new APIClient("data/users.json");
 
 const RegisterPage: React.FC<RegisterProps> = () => {
   const [firstName, setFirstName] = useState("");
@@ -12,11 +14,14 @@ const RegisterPage: React.FC<RegisterProps> = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [usersLength, setUsersLength] = useState<number | null>();
 
   useEffect(() => {
-    fetch("./data/users.json")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    async function fetchData(): Promise<void> {
+      const lengthOfUsers = await ApiClient.getUsersLength();
+      setUsersLength(lengthOfUsers);
+    }
+    fetchData();
   }, []);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -30,8 +35,21 @@ const RegisterPage: React.FC<RegisterProps> = () => {
     // Your registration authentication logic here
     if (email === "user@example.com") {
       setError("User already exists");
+    }
+    if (!usersLength) {
+      setError("Cannot create user");
     } else {
-      onRegisterSucces(firstName, lastName, email, password);
+      const showStatus = async () => {
+        const isSucces = await ApiClient.createUser(
+          usersLength + 1,
+          firstName,
+          lastName,
+          email,
+          password
+        );
+        setError(isSucces);
+      };
+      showStatus();
     }
   };
 

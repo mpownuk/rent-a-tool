@@ -6,11 +6,13 @@ type ToolProps = {
   description: string;
   category: string;
   price: number;
+  image: string;
   available: boolean;
 };
 
 const Tool: React.FC = () => {
   const [tools, setTools] = useState<ToolProps[]>([]);
+  const [isHovered, setIsHovered] = useState<number | null>();
 
   useEffect(() => {
     fetch("./data/tools.json")
@@ -22,10 +24,23 @@ const Tool: React.FC = () => {
     <div className="tools-container">
       {tools ? (
         tools.map((tool) => (
-          <div key={tool.id} className="tool">
+          <div
+            key={tool.id}
+            onMouseEnter={() => setIsHovered(tool.id)}
+            onMouseLeave={() => setIsHovered(null)}
+            className="tool"
+          >
+            <div className="tool__image-container">
+              <img
+                className={`tool__image ${
+                  isHovered === tool.id ? "tool__image--hovered" : ""
+                }`}
+                src={tool.image}
+                alt={tool.name}
+              />
+            </div>
             <h2 className="tool__title">{tool.name}</h2>
-            <p className="tool__description">{tool.description}</p>
-            <p className="tool__category">Category: {tool.category}</p>
+
             <p className="tool__price"> Price: ${tool.price}</p>
             <p
               className={
