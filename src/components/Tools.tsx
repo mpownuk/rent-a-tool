@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 type ToolProps = {
   id: number;
@@ -13,6 +14,17 @@ type ToolProps = {
 const Tool: React.FC = () => {
   const [tools, setTools] = useState<ToolProps[]>([]);
   const [isHovered, setIsHovered] = useState<number | null>();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const typeFilter = searchParams.get("category");
+  console.log(typeFilter);
+
+  const filteredTools = typeFilter
+    ? tools.filter((tool) => {
+        console.log(tool.category.toLowerCase().replace(/ /g, "_"));
+        return tool.category.toLowerCase().replace(/ /g, "_") === typeFilter;
+      })
+    : tools;
 
   useEffect(() => {
     fetch("./data/tools.json")
@@ -22,8 +34,8 @@ const Tool: React.FC = () => {
 
   return (
     <div className="tools-container">
-      {tools ? (
-        tools.map((tool) => (
+      {filteredTools ? (
+        filteredTools.map((tool) => (
           <div
             key={tool.id}
             onMouseEnter={() => setIsHovered(tool.id)}
