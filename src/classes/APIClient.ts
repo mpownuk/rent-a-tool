@@ -28,6 +28,14 @@ export default class APIClient {
     }
   }
 
+  //TODO: create reusable method for fetch data from all json files and replace loginuser and gettools with it
+
+  async getTool(id: number) {
+    const url = this.baseURL;
+    try {
+    } catch (err) {}
+  }
+
   async loginUser(email: string, password: string): Promise<boolean> {
     const url = this.baseURL;
     let isLogged: boolean = false;

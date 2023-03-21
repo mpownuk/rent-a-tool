@@ -4,13 +4,30 @@ import RegisterPage from "./components/RegisterPage";
 import Header from "./components/Header";
 import Tools from "./components/Tools";
 import UserDashboard from "./components/UserDashboard";
+import NotFound from "./components/NotFound";
+import Tool from "./components/Tool";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header appName={"Rent a Tool"} />}>
+          <Route path="*" element={<NotFound />} />
           <Route path="tools" element={<Tools />} />
+          <Route
+            path="tools/:id"
+            element={
+              <Tool
+                id={0}
+                name={""}
+                description={""}
+                category={""}
+                price={0}
+                image={""}
+                available={false}
+              />
+            }
+          />
           <Route
             path="login"
             element={

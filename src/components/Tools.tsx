@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-
-type ToolProps = {
-  id: number;
-  name: string;
-  description: string;
-  category: string;
-  price: number;
-  image: string;
-  available: boolean;
-};
+import { useSearchParams, Link } from "react-router-dom";
+import { ToolProps } from "../interfaces/ToolProps";
 
 const Tool: React.FC = () => {
   const [tools, setTools] = useState<ToolProps[]>([]);
@@ -36,7 +27,8 @@ const Tool: React.FC = () => {
     <div className="tools-container">
       {filteredTools ? (
         filteredTools.map((tool) => (
-          <div
+          <Link
+            to={`${tool.id}`}
             key={tool.id}
             onMouseEnter={() => setIsHovered(tool.id)}
             onMouseLeave={() => setIsHovered(null)}
@@ -61,7 +53,7 @@ const Tool: React.FC = () => {
             >
               Availability: {tool.available ? "Available" : "Not available"}
             </p>
-          </div>
+          </Link>
         ))
       ) : (
         <h2>Loading...</h2>

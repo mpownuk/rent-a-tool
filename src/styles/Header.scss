@@ -1,5 +1,5 @@
-$header-color: #ffd800;
-$header-bg-color: #000000;
+@import "./mixins/FlexBox.scss";
+@import "./variables";
 
 .header {
   background-color: $header-bg-color;
@@ -8,9 +8,7 @@ $header-bg-color: #000000;
   color: $header-color;
 
   &__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include FlexBox(row, center, space-between, 0, 0 1 auto);
     font-weight: 600;
     font-size: 1.5rem;
   }
@@ -22,8 +20,7 @@ $header-bg-color: #000000;
   }
 
   &__menu {
-    display: flex;
-    gap: 2rem;
+    @include FlexBox(row, center, center, 2rem, 0 1 auto);
     list-style: none;
     margin: 0;
   }
