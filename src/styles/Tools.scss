@@ -6,11 +6,8 @@
 }
 
 .tool {
+  @include FlexBox(column, center, center, 0, 0 1 auto);
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 1rem;
   padding: 1rem;
   background-color: transparent;
@@ -20,12 +17,9 @@
   cursor: pointer;
 
   &__image-container {
-    width: 100%;
+    @include FlexBox(column, center, center, 0, 0 1 auto);
     height: 200px;
     padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: visible;
   }
 

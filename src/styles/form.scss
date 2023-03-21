@@ -1,16 +1,11 @@
+@import "mixins/FlexBox.scss";
+
 .form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include FlexBox(column, center, center, 0, 0 1 auto);
   margin-top: 2rem;
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+    @include FlexBox(column, center, center, 0, 0 1 90%);
     background-color: #ffffff;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -24,8 +19,7 @@
   }
 
   &__field {
-    display: flex;
-    flex-direction: column;
+    @include FlexBox(column, flex-start, center, 0, 0 1 auto);
     margin-bottom: 1rem;
     width: 100%;
   }
