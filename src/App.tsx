@@ -6,6 +6,7 @@ import Tools from "./components/Tools";
 import UserDashboard from "./components/UserDashboard";
 import NotFound from "./components/NotFound";
 import Tool from "./components/Tool";
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
                 category={""}
                 price={0}
                 image={""}
-                available={false}
+                available={0}
               />
             }
           />
@@ -49,6 +50,7 @@ function App() {
             }
           />
           <Route path="user" element={<UserDashboard />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </BrowserRouter>

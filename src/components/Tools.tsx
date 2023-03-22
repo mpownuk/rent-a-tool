@@ -8,11 +8,9 @@ const Tool: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const typeFilter = searchParams.get("category");
-  console.log(typeFilter);
 
   const filteredTools = typeFilter
     ? tools.filter((tool) => {
-        console.log(tool.category.toLowerCase().replace(/ /g, "_"));
         return tool.category.toLowerCase().replace(/ /g, "_") === typeFilter;
       })
     : tools;
@@ -51,7 +49,7 @@ const Tool: React.FC = () => {
                 tool.available ? "tool__availability" : "tool__unavailability"
               }
             >
-              Availability: {tool.available ? "Available" : "Not available"}
+              Availability: {tool.available ? tool.available : "Not available"}
             </p>
           </Link>
         ))
