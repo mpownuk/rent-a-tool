@@ -5,5 +5,5 @@ export interface ToolProps {
   category: string;
   price: number;
   image: string;
-  available: boolean;
+  available: number;
 }

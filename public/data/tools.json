@@ -7,7 +7,7 @@
       "category": "Hand Tools",
       "price": 5.0,
       "image": "./images/Hammer.jpg",
-      "available": true
+      "available": 36
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "category": "Power Tools",
       "price": 10.0,
       "image": "./images/Drill.jpg",
-      "available": true
+      "available": 8
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "category": "Power Tools",
       "price": 15.0,
       "image": "./images/Saw.jpg",
-      "available": false
+      "available": 7
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "category": "Hand Tools",
       "price": 2.0,
       "image": "./images/Screwdriver.jpg",
-      "available": true
+      "available": 34
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "category": "Hand Tools",
       "price": 3.0,
       "image": "./images/Wrench.jpg",
-      "available": true
+      "available": 32
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "category": "Hand Tools",
       "price": 4.0,
       "image": "./images/Pliers.jpg",
-      "available": false
+      "available": 44
     },
     {
       "id": 7,
@@ -61,7 +61,7 @@
       "category": "Power Tools",
       "price": 25.0,
       "image": "./images/Circular-Saw.jpg",
-      "available": true
+      "available": 9
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "category": "Power Tools",
       "price": 20.0,
       "image": "./images/Jigsaw.jpg",
-      "available": false
+      "available": 11
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "category": "Power Tools",
       "price": 30.0,
       "image": "./images/Angle-Grinder.jpg",
-      "available": true
+      "available": 21
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "category": "Power Tools",
       "price": 50.0,
       "image": "./images/Chainsaw.jpg",
-      "available": true
+      "available": 7
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "category": "Power Tools",
       "price": 100.0,
       "image": "./images/Jackhammer.jpg",
-      "available": false
+      "available": 8
     },
     {
       "id": 12,
@@ -106,7 +106,7 @@
       "category": "Painting Tools",
       "price": 15.0,
       "image": "./images/Paint-Sprayer.jpg",
-      "available": true
+      "available": 42
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "category": "Hand Tools",
       "price": 5.0,
       "image": "./images/Staple-Gun.jpg",
-      "available": false
+      "available": 32
     },
     {
       "id": 14,
@@ -124,7 +124,7 @@
       "category": "Power Tools",
       "price": 25.0,
       "image": "./images/Power-Drill.jpg",
-      "available": true
+      "available": 17
     },
     {
       "id": 15,
@@ -133,7 +133,7 @@
       "category": "Hand Tools",
       "price": 3.0,
       "image": "./images/Ratchet.jpg",
-      "available": true
+      "available": 40
     }
   ]
 }
