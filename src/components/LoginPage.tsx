@@ -1,22 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import APIClient from "../classes/APIClient";
 
 const ApiClient = new APIClient("data/users.json");
 
-interface LoginProps {
-  onLoginSuccess: () => void;
-}
-
-const LoginPage: React.FC<LoginProps> = ({ onLoginSuccess }) => {
+const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     const res = await ApiClient.loginUser(email, password);
-    setError((prev) => (res ? "Success!" : "Invalid email or password!"));
+    if (res) {
+      localStorage.setItem("loggedin", "true");
+      navigate("/user");
+    } else {
+      setError(() => "Invalid email or password!");
+    }
   };
 
   return (
