@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import Header from "./components/Header";
+import User from "./components/User";
 import Tools from "./components/Tools";
 import UserDashboard from "./components/UserDashboard";
 import NotFound from "./components/NotFound";
@@ -29,16 +30,7 @@ function App() {
               />
             }
           />
-          <Route
-            path="login"
-            element={
-              <LoginPage
-                onLoginSuccess={function (): void {
-                  throw new Error("Function not implemented.");
-                }}
-              />
-            }
-          />
+          <Route path="login" element={<LoginPage />} />
           <Route
             path="register"
             element={
@@ -49,7 +41,9 @@ function App() {
               />
             }
           />
-          <Route path="user" element={<UserDashboard />} />
+          <Route path="user" element={<User />}>
+            <Route index element={<UserDashboard />} />
+          </Route>
           <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>

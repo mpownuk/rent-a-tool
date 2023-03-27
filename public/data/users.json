@@ -4,24 +4,24 @@
       "id": 1,
       "firstName": "John",
       "lastName": "Doe",
-      "email": "johndoe@example.com",
-      "password": "password123",
+      "email": "j@d.com",
+      "password": "p123",
       "rentedTools": ["drill", "hammer", "saw"]
     },
     {
       "id": 2,
       "firstName": "Jane",
       "lastName": "Doe",
-      "email": "janedoe@example.com",
-      "password": "password456",
+      "email": "ja@d.com",
+      "password": "p456",
       "rentedTools": ["hammer", "saw"]
     },
     {
       "id": 3,
       "firstName": "Bob",
       "lastName": "Smith",
-      "email": "bobsmith@example.com",
-      "password": "password789",
+      "email": "b@s.com",
+      "password": "p789",
       "rentedTools": []
     }
   ]
