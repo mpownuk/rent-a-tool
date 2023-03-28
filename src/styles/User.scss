@@ -1,0 +1,20 @@
+@import "./mixins/FlexBox.scss";
+@import "./variables.scss";
+
+.user {
+  &__nav {
+    @include FlexBox(row, center, space-between, 0, 0 1 auto);
+    background-color: $secondary-color;
+    color: $header-color;
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    &--links {
+      @include FlexBox(row, center, center, 2rem, 0 1 auto);
+    }
+    &--btn {
+      font-weight: 500;
+      color: $header-color;
+    }
+  }
+}
