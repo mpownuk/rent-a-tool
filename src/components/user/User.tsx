@@ -8,11 +8,11 @@ import {
 } from "react-router-dom";
 import { requireAuth } from "../../methods/requireAuth";
 
-export function loader() {
+export const loader = () => {
   requireAuth();
   const isLoggedIn = localStorage.getItem("loggedin");
   return isLoggedIn;
-}
+};
 
 const User: React.FC = () => {
   const loaderData = useLoaderData();
