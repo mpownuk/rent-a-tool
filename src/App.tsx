@@ -17,10 +17,12 @@ import UserProfile from "./components/user/UserProfile";
 import RentedTools from "./components/user/RentedTools";
 import RenatlHistory from "./components/user/RentalHistory";
 import Payment from "./components/user/Payment";
+import Main, { loader as mainLoader } from "./components/MainSite";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Header appName={"Rent a Tool"} />}>
+      <Route index loader={mainLoader} element={<Main />} />
       <Route path="*" element={<NotFound />} />
       <Route path="tools" element={<Tools />} />
       <Route
