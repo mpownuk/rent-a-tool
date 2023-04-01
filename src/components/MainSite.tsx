@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
-export const loader = () => {
-  const images: string[] = [
-    "./images/header-photos/header-photo1.jpg",
-    "./images/header-photos/header-photo2.jpg",
-    "./images/header-photos/header-photo3.jpg",
-    "./images/header-photos/header-photo4.jpg",
-  ];
+type image_src = {
+  "image-src": string;
+};
+
+export const loader = async () => {
+  const images = await fetch("./data/main-site-images.json")
+    .then((res) => res.json())
+    .then((data) => data.images.map((img: image_src) => img["image-src"]));
   return images;
 };
 
@@ -25,13 +26,18 @@ const MainSite: React.FC = () => {
   const siteImages = imagesSrcHandler(imagesSrc);
 
   const [currentImage, setCurrentImage] = useState<string>(siteImages[0]);
+  const [imageAnimation, setImageAnimation] = useState(true);
 
   useEffect(() => {
-    let counter = 1;
+    let imageIndex = 1;
     const interval = setInterval(() => {
-      setCurrentImage(siteImages[counter]);
-      counter++;
-      if (counter === siteImages.length) counter = 0;
+      setImageAnimation(true);
+      setCurrentImage(siteImages[imageIndex]);
+      imageIndex++;
+      if (imageIndex === siteImages.length) imageIndex = 0;
+      setTimeout(() => {
+        setImageAnimation(false);
+      }, 3960);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -39,7 +45,14 @@ const MainSite: React.FC = () => {
 
   return (
     <div className="mainsite">
-      <img className="mainsite__image" src={currentImage}></img>
+      <div>{currentImage}</div>
+      <img
+        className={`${
+          imageAnimation ? "mainsite__image" : "mainsite__image--invisible"
+        }`}
+        src={currentImage}
+        alt="main site photogrphy"
+      ></img>
     </div>
   );
 };
