@@ -8,7 +8,7 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import Header from "./components/Header";
 import User, { loader as userLoader } from "./components/user/User";
-import Tools from "./components/Tools";
+import Tools, { loader as toolsLoader } from "./components/Tools";
 import NotFound from "./components/NotFound";
 import Tool from "./components/Tool";
 import Cart from "./components/Cart";
@@ -24,7 +24,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Header appName={"Rent a Tool"} />}>
       <Route index loader={mainLoader} element={<Main />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="tools" element={<Tools />} />
+      <Route path="tools" loader={toolsLoader} element={<Tools />} />
       <Route
         path="tools/:id"
         element={

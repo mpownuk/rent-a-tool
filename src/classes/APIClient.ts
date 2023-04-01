@@ -28,12 +28,17 @@ export default class APIClient {
     }
   }
 
-  //TODO: create reusable method for fetch data from all json files and replace loginuser and gettools with it
-
-  async getTool(id: number) {
+  async getData(): Promise<any> {
     const url = this.baseURL;
     try {
-    } catch (err) {}
+      const res = await axios.get(url);
+      const data = await res.data;
+      console.log(data);
+      return data;
+    } catch (err) {
+      handleError(err);
+      return err;
+    }
   }
 
   async loginUser(email: string, password: string): Promise<boolean> {
