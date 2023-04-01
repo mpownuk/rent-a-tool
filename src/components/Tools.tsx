@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useSearchParams, Link, useLoaderData } from "react-router-dom";
 import { ToolProps } from "../interfaces/ToolProps";
+import APIClient from "../classes/APIClient";
+
+const ApiClient = new APIClient("./data/tools.json");
+
+export const loader = async (): Promise<ToolProps[]> => {
+  const toolsData = await ApiClient.getData();
+  const tools: ToolProps[] = toolsData?.tools || [];
+  return tools;
+};
 
 const Tool: React.FC = () => {
-  const [tools, setTools] = useState<ToolProps[]>([]);
+  const tools: ToolProps[] = useLoaderData() as ToolProps[];
   const [isHovered, setIsHovered] = useState<number | null>();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -14,12 +23,6 @@ const Tool: React.FC = () => {
         return tool.category.toLowerCase().replace(/ /g, "_") === typeFilter;
       })
     : tools;
-
-  useEffect(() => {
-    fetch("./data/tools.json")
-      .then((res) => res.json())
-      .then((data) => setTools(data.tools));
-  }, []);
 
   return (
     <div className="tools-container">

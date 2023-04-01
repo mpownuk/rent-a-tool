@@ -1,24 +1,28 @@
 .mainsite {
-  .mainsite__image {
-    filter: brightness(0.75);
-    animation: img 4s infinite;
-  }
+  .mainsite__image--wraper {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    .mainsite__image {
+      width: 100%;
+      height: auto;
+      filter: brightness(0.75);
+      animation: img 4s infinite;
+    }
 
-  @keyframes img {
-    0% {
-      opacity: 0;
+    @keyframes img {
+      0% {
+        opacity: 0;
+      }
+      7% {
+        opacity: 1;
+      }
+      93% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
     }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  .mainsite__image--invisible {
-    opacity: 0;
   }
 }

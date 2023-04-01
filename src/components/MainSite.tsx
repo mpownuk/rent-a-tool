@@ -26,18 +26,13 @@ const MainSite: React.FC = () => {
   const siteImages = imagesSrcHandler(imagesSrc);
 
   const [currentImage, setCurrentImage] = useState<string>(siteImages[0]);
-  const [imageAnimation, setImageAnimation] = useState(true);
 
   useEffect(() => {
     let imageIndex = 1;
     const interval = setInterval(() => {
-      setImageAnimation(true);
       setCurrentImage(siteImages[imageIndex]);
       imageIndex++;
       if (imageIndex === siteImages.length) imageIndex = 0;
-      setTimeout(() => {
-        setImageAnimation(false);
-      }, 3960);
     }, 4000);
 
     return () => clearInterval(interval);
@@ -45,14 +40,13 @@ const MainSite: React.FC = () => {
 
   return (
     <div className="mainsite">
-      <div>{currentImage}</div>
-      <img
-        className={`${
-          imageAnimation ? "mainsite__image" : "mainsite__image--invisible"
-        }`}
-        src={currentImage}
-        alt="main site photogrphy"
-      ></img>
+      <div className="mainsite__image--wraper">
+        <img
+          className="mainsite__image"
+          src={currentImage}
+          alt="main site photogrphy"
+        ></img>
+      </div>
     </div>
   );
 };
