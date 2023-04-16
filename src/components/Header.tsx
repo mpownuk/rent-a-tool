@@ -14,6 +14,12 @@ const Header: React.FC<HeaderProps> = ({ appName }) => {
     setShowMenu(window.innerWidth > 720);
   };
 
+  const toggleNavOnMobile = () => {
+    if (window.innerWidth <= 720) {
+      setShowMenu(false);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("resize", toggleMenu);
 
@@ -30,24 +36,27 @@ const Header: React.FC<HeaderProps> = ({ appName }) => {
             <Link to="/" className="header__logo">
               {appName}
             </Link>
+
+            {/* TODO: HANDLE WITH DROPDOWN MENU: header__menu - header__menu--hidden CSS CLASSES ARE WRITTEN */}
+
             {showMenu && (
               <ul className="header__menu">
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="user">Account</Link>
                 </li>
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="tools">Tools</Link>
                 </li>
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="about">About</Link>
                 </li>
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="contact">Contact</Link>
                 </li>
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="login">Log In</Link>
                 </li>
-                <li>
+                <li onClick={toggleNavOnMobile}>
                   <Link to="cart">
                     <div className="header__cart">
                       {toolsInCart && (
