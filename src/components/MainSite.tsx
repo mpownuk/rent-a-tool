@@ -25,27 +25,34 @@ const MainSite: React.FC = () => {
 
   const siteImages = imagesSrcHandler(imagesSrc);
 
-  const [currentImage, setCurrentImage] = useState<string>(siteImages[0]);
+  const [currentImage, setCurrentImage] = useState<number>(0);
 
   useEffect(() => {
     let imageIndex = 1;
     const interval = setInterval(() => {
-      setCurrentImage(siteImages[imageIndex]);
+      setCurrentImage(imageIndex);
       imageIndex++;
       if (imageIndex === siteImages.length) imageIndex = 0;
     }, 4000);
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="mainsite">
       <div className="mainsite__image--wraper">
-        <img
-          className="mainsite__image"
-          src={currentImage}
-          alt="main site photogrphy"
-        ></img>
+        {siteImages.map((image: string, index: any) => {
+          console.log(currentImage, index);
+          return currentImage === index ? (
+            <img
+              key={index}
+              className="mainsite__image"
+              src={image}
+              alt="main site photography"
+            ></img>
+          ) : null;
+        })}
       </div>
     </div>
   );
