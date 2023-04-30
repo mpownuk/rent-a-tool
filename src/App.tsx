@@ -18,6 +18,7 @@ import RentedTools from "./components/user/RentedTools";
 import RenatlHistory from "./components/user/RentalHistory";
 import Payment from "./components/user/Payment";
 import Main, { loader as mainLoader } from "./components/MainSite";
+import Contact, { loader as contactLoader } from "./components/Contact";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
           />
         }
       />
+      <Route path="contact" loader={contactLoader} element={<Contact />} />
       <Route path="login" element={<LoginPage />} />
       <Route
         path="register"
