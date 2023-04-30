@@ -43,7 +43,6 @@ const MainSite: React.FC = () => {
     <div className="mainsite">
       <div className="mainsite__image--wraper">
         {siteImages.map((image: string, index: any) => {
-          console.log(currentImage, index);
           return currentImage === index ? (
             <img
               key={index}

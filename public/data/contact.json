@@ -1,0 +1,25 @@
+{
+  "contactData": [
+    {
+      "title": "CEO",
+      "name": "John Smith",
+      "email": "johnsmith123@gmail.com",
+      "phone": "(555) 555-5555",
+      "address": "123 Main St, Anytown, USA 12345"
+    },
+    {
+      "title": "Hardware Engineer",
+      "name": "Bob Johnson",
+      "email": "bob.johnson789@yahoo.com",
+      "phone": "(555) 555-9876",
+      "address": "789 Maple Ave, Nowhereville, USA 54321"
+    },
+    {
+      "title": "Marketing Manager",
+      "name": "Jane Doe",
+      "email": "janedoe456@gmail.com",
+      "phone": "(555) 555-1212",
+      "address": "456 Oak St, Somewhereville, USA 67890"
+    }
+  ]
+}
